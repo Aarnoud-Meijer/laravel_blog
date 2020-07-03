@@ -16,3 +16,28 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/blog', function () {
+    //return view('welcome');
+    //return "user test";
+    return view('blog');
+});
+
+Route::get('/blog/create', function () {
+    //return view('welcome');
+    //return "user test";
+    return view('blog');
+});
+
+
+Route::get('/user', function () {
+    //return view('welcome');
+    //return "user test";
+    return view('user');
+});
+
+Route::get('/layout_test', function () {
+    //return view('welcome');
+    //return "user test";
+    return view('test');
+});

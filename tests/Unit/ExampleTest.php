@@ -13,6 +13,11 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->assertTrue(true);
+	$this->assertTrue(true);
+	// out of date!	
+//	$this->visit('/')->see('Welcome');
+//	$this->get('/')->see('Welcome');
+
+
     }
 }
