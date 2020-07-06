@@ -15,6 +15,10 @@ class adminController extends BaseController
         return view('welcome in dashboard');
     }
 
+    public function login($val = NULL){
+        return view('login');
+    }
+
     public function dashboard($val = NULL, $id = null){
         //return view('blog/test');
         var_dump($val);
@@ -24,7 +28,7 @@ class adminController extends BaseController
     public function blogpage($val = NULL, $id = null){
         //return view('blog/test');
         var_dump($val);
-        return 'dashboard';
+        return 'blogpage';
     }
 }
 
