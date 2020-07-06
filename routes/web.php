@@ -58,6 +58,7 @@ foreach($pages as $key => $val){
     Route::get($key, [
         'as'    => $key,
         'uses'  => 'PagesController@'.$val,
+        // 'key' => !empty($val) ? $val : 'default', 
     ]);
 }
 
@@ -88,3 +89,12 @@ foreach($pages as $key => $val){
     ]);
     */
 }
+
+Route::group(['as' => 'admin::'], function(){
+    Route::get('dashboard', [
+        'as'    => 'dashboard',
+        'uses'  => 'adminController@dashboard',
+
+    ]);
+
+});
