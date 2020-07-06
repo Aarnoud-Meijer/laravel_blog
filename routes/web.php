@@ -90,7 +90,7 @@ foreach($pages as $key => $val){
     */
 }
 
-Route::group(['as' => 'admin::'], function(){
+Route::group(['as' => 'admin::', 'prefix' => 'admin'], function(){
     Route::get('dashboard', [
         'as'    => 'dashboard',
         'uses'  => 'adminController@dashboard',
