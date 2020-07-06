@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
@@ -41,3 +42,48 @@ Route::get('/layout_test', function () {
     //return "user test";
     return view('test');
 });
+*/
+
+$pages = array(
+ //   '/'             => 'welcome',
+    '/'             => 'index',
+    '/blog'         => 'blog',
+    '/blog/create'  => 'blog',
+    '/user'         => 'user',
+    '/layout_test'  => 'test',
+);
+
+foreach($pages as $key => $val){
+    Route::get($key, [
+        'as'    => $key,
+        'uses'  => 'PagesController@'.$val,
+    ]);
+}
+
+
+foreach($pages as $key => $val){
+//    echo $val;
+    /*
+    Route::get($key, function ($val) {
+        return view($val);
+    });
+    */
+}
+
+$pagestest = array(
+    '/test'  => 'test',
+);
+
+foreach($pages as $key => $val){
+    //echo $val;
+    /*
+    Route::get($key, function (&$val) {
+        return view($val);
+    });
+    
+    Route::get($key, [
+        'as'    => $key,
+        'uses'  => 'PagesController@'.$val,
+    ]);
+    */
+}

@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link href-"style.css" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
@@ -101,7 +101,11 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
 -->
+                <br/>
+                <a href="https://github.com/Aarnoud-Meijer/laravel_blog">git</a>
             </div>
+            
         </div>
+
     </body>
 </html>
