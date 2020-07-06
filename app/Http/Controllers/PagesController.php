@@ -12,12 +12,11 @@ class PagesController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index($val = NULL){
-        echo $val;
         return view('welcome');
     }
 
     public function test($val = NULL){
-        echo $val;
-
+        return view('blog/test');
+        return view('test');
     }
 }

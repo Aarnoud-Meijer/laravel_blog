@@ -51,6 +51,7 @@ $pages = array(
     '/blog/create'  => 'blog',
     '/user'         => 'user',
     '/layout_test'  => 'test',
+    '/test'         => 'test',
 );
 
 foreach($pages as $key => $val){
