@@ -91,10 +91,15 @@ foreach($pages as $key => $val){
 }
 
 Route::group(['as' => 'admin::', 'prefix' => 'admin'], function(){
-    Route::get('dashboard', [
+    // $router->pattern('id', '[0-9]+');
+    // 'where' => ['id' => '[0-9]+'],
+    Route::get('dashboard/{id?}', [
         'as'    => 'dashboard',
         'uses'  => 'adminController@dashboard',
-
+//        'id'    => 'id',
     ]);
-
+    Route::get('blogpage/{id?}', [
+        'as'    => 'dashboard',
+        'uses'  => 'adminController@blogpage',
+    ]);
 });
