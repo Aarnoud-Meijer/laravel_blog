@@ -19,4 +19,14 @@ class PagesController extends BaseController
         return view('blog/test');
         return view('test');
     }
+
+    public function blog($val = NULL){
+        return view('blog/test');
+        return view('test');
+    }
+
+    public function user($val = NULL){
+
+        return 'user';
+    }
 }
