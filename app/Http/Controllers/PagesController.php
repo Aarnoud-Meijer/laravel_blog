@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -12,17 +13,17 @@ class PagesController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index($val = NULL){
+        Blog
         return view('welcome');
     }
 
     public function test($val = NULL){
-        return view('blog/test');
+        return view('blog/blog');
         return view('test');
     }
 
     public function blog($val = NULL){
-        return view('blog/test');
-        return view('test');
+        return view('blog/blog');
     }
 
     public function user($val = NULL){

@@ -1,9 +1,9 @@
-/*
 @extends('blog/layout')
+
+@section('title', 'Hometest')
 
 @section ('content')
     Layout test
 @endsection
-*/
 
-test sub folder
+@section('test', 'Hometest')
