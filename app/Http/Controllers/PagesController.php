@@ -13,7 +13,7 @@ class PagesController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index($val = NULL){
-        Blog
+        Blog::all();
         return view('welcome');
     }
 
