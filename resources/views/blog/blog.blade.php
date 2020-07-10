@@ -3,7 +3,11 @@
 @section('title', 'Hometest')
 
 @section ('content')
-    Layout test
+    <form action="" method="post">
+        <input type="text" placeholder="title">
+        <button type="submit">send</button>
+    </form>
 @endsection
 
 @section('test', 'Hometest')
+

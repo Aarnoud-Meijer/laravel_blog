@@ -2,6 +2,75 @@
 
 use Illuminate\Support\Facades\Route;
 
+$pages = array(
+ //   '/'             => 'welcome',
+    '/'             => 'index',
+    '/blog'         => 'blog',
+    '/blog/create'  => 'blog',
+    '/user'         => 'user',
+    '/layout_test'  => 'test',
+    '/test'         => 'test',
+);
+
+foreach($pages as $key => $val){
+    Route::get($key, [
+        'as'    => $key,
+        'uses'  => 'PagesController@'.$val,
+        // 'key' => !empty($val) ? $val : 'default', 
+    ]);
+}
+
+Route::group(['as' => 'admin::', 'prefix' => 'admin'], function(){
+    // $router->pattern('id', '[0-9]+');
+    // 'where' => ['id' => '[0-9]+'],
+    Route::get('dashboard/{id?}', [
+        'as'    => 'dashboard',
+        'uses'  => 'adminController@dashboard',
+//        'id'    => 'id',
+    ]);
+    Route::get('blogpage/{id?}', [
+        'as'    => 'dashboard',
+        'uses'  => 'adminController@blogpage',
+    ]);
+});
+
+Route::post('/blog', [
+    'as'    => 'blog',
+    'uses'  => 'PagesController@blog',
+]);
+
+
+foreach($pages as $key => $val){
+//    echo $val;
+    /*
+    Route::get($key, function ($val) {
+        return view($val);
+    });
+    */
+}
+
+$pagestest = array(
+    '/test'  => 'test',
+);
+
+foreach($pages as $key => $val){
+    //echo $val;
+    /*
+    Route::get($key, function (&$val) {
+        return view($val);
+    });
+    
+    Route::get($key, [
+        'as'    => $key,
+        'uses'  => 'PagesController@'.$val,
+    ]);
+    */
+}
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,63 +112,3 @@ Route::get('/layout_test', function () {
     return view('test');
 });
 */
-
-$pages = array(
- //   '/'             => 'welcome',
-    '/'             => 'index',
-    '/blog'         => 'blog',
-    '/blog/create'  => 'blog',
-    '/user'         => 'user',
-    '/layout_test'  => 'test',
-    '/test'         => 'test',
-);
-
-foreach($pages as $key => $val){
-    Route::get($key, [
-        'as'    => $key,
-        'uses'  => 'PagesController@'.$val,
-        // 'key' => !empty($val) ? $val : 'default', 
-    ]);
-}
-
-
-foreach($pages as $key => $val){
-//    echo $val;
-    /*
-    Route::get($key, function ($val) {
-        return view($val);
-    });
-    */
-}
-
-$pagestest = array(
-    '/test'  => 'test',
-);
-
-foreach($pages as $key => $val){
-    //echo $val;
-    /*
-    Route::get($key, function (&$val) {
-        return view($val);
-    });
-    
-    Route::get($key, [
-        'as'    => $key,
-        'uses'  => 'PagesController@'.$val,
-    ]);
-    */
-}
-
-Route::group(['as' => 'admin::', 'prefix' => 'admin'], function(){
-    // $router->pattern('id', '[0-9]+');
-    // 'where' => ['id' => '[0-9]+'],
-    Route::get('dashboard/{id?}', [
-        'as'    => 'dashboard',
-        'uses'  => 'adminController@dashboard',
-//        'id'    => 'id',
-    ]);
-    Route::get('blogpage/{id?}', [
-        'as'    => 'dashboard',
-        'uses'  => 'adminController@blogpage',
-    ]);
-});
