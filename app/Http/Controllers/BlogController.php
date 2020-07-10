@@ -9,7 +9,8 @@ use App\Blog;
 class BlogController extends Controller
 {
     public function index(){
-//        Message::all();
+        Blog::all();
+
 /*
 $table->id();
 $table->string('title');
@@ -19,12 +20,13 @@ $table->timestamps();
 */
     }
 
-    public function createBlog(Request $request){
+    
+    public function createPost(Request $request){
+        // Post or blog entry
         $blog = new Blog();
         $blog->title = $request->title;
         $blog->body = $request->body;
         $blog->autor = $request->autor;
-
         $blog->save();
     }
 }

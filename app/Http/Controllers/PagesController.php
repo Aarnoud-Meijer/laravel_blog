@@ -11,6 +11,7 @@ use Illuminate\Routing\Controller as BaseController;
 class PagesController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    use \App\Http\Controllers\baseController;
 
     public function index($val = NULL){
         Blog::all();
